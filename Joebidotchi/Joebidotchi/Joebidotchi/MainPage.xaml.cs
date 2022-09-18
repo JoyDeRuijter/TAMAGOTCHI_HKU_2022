@@ -15,6 +15,8 @@ namespace Joebidotchi
         public MainPage()
         {
             InitializeComponent();
+            //Color bgColor = Color.FromHex("152760");
+            //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = bgColor;
         }
     }
 }

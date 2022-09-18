@@ -142,4 +142,94 @@
       <Name>Joebidotchi</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Thirst_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Thirst_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Tired_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Tired_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Tired_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TextBubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Background_Press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Biden_Angry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Biden_Bored.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Biden_Dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Biden_Happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Biden_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Biden_Sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Attention_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Attention_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Attention_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Bored_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Bored_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Bored_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Hunger_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Hunger_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Hunger_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Overstimulated_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Overstimulated_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Overstimulated_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon_Thirst_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ArrowRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ArrowLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Table_Press.png" />
+  </ItemGroup>
 </Project>

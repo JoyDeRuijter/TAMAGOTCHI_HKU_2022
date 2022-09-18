@@ -14,7 +14,11 @@ namespace Joebidotchi
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("#152760"),
+                BarTextColor = Color.White,
+            };
         }
 
         protected override void OnStart()
