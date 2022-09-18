@@ -10,23 +10,21 @@ using Xamarin.Forms.Xaml;
 namespace Joebidotchi
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class PageStatEat : ContentPage
     {
-        public MainPage()
+        public PageStatEat()
         {
             InitializeComponent();
         }
 
         private void OnLeftArrowClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PageStatTired());
+            Navigation.PopAsync();
         }
 
         private void OnRightArrowClicked(object sender, EventArgs e)
         {
-            Page eatPage = new PageStatEat();
-            NavigationPage.SetHasBackButton(eatPage, false);
-            Navigation.PushAsync(eatPage);
+            Navigation.PushAsync(new PageStatDrink());
         }
     }
 }
