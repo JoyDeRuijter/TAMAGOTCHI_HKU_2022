@@ -24,7 +24,15 @@ namespace Joebidotchi
 
         private void OnRightArrowClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PageStatDrink());
+            Page drinkPage = new PageStatDrink();
+            NavigationPage.SetHasBackButton(drinkPage, false);
+            Navigation.PushAsync(drinkPage);
+        }
+
+        private void OnEatClicked(object sender, EventArgs e)
+        {
+            Console.WriteLine("You made Joe eat!");
+            // add points to hunger stat
         }
     }
 }

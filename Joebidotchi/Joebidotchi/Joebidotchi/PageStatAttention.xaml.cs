@@ -16,5 +16,23 @@ namespace Joebidotchi
         {
             InitializeComponent();
         }
+
+        private void OnLeftArrowClicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
+
+        private void OnRightArrowClicked(object sender, EventArgs e)
+        {
+            Page overstimPage = new PageStatOverstimulated();
+            NavigationPage.SetHasBackButton(overstimPage, false);
+            Navigation.PushAsync(overstimPage);
+        }
+
+        private void OnTalkClicked(object sender, EventArgs e)
+        {
+            Console.WriteLine("You gave Joe attention!");
+            // add points to attention stat
+        }
     }
 }

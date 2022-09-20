@@ -16,5 +16,23 @@ namespace Joebidotchi
         {
             InitializeComponent();
         }
+
+        private void OnLeftArrowClicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
+
+        private void OnRightArrowClicked(object sender, EventArgs e)
+        {
+            Page boredPage = new PageStatBored();
+            NavigationPage.SetHasBackButton(boredPage, false);
+            Navigation.PushAsync(boredPage);
+        }
+
+        private void OnDrinkClicked(object sender, EventArgs e)
+        {
+            Console.WriteLine("You made Joe drink!");
+            // add points to thirst stat
+        }
     }
 }

@@ -34,7 +34,7 @@
         <Image Grid.Row="0"
                Grid.RowSpan="5"
                Grid.ColumnSpan="8" 
-               Source="Background_Press"
+               Source="Background_Restaurant"
                HorizontalOptions="FillAndExpand"
                Aspect="AspectFill"/>
         <Image Grid.Row="1"
@@ -44,12 +44,44 @@
                Source="Icon_Hunger_green"
                VerticalOptions="CenterAndExpand"
                HorizontalOptions="CenterAndExpand" />
+        <ImageButton Grid.Row="1"
+               Grid.Column="4"
+               Grid.ColumnSpan="3"
+               Margin="0"
+               Source="ButtonEat"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand"
+               BackgroundColor="Transparent"
+               BorderColor="Transparent"
+               Clicked="OnEatClicked">
+            
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="0.8" />
+                            <Setter Property="BackgroundColor"
+                                    Value="White"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            
+        </ImageButton>
         <Image Grid.Row="2"
                Grid.RowSpan="2"
                Grid.Column="2"
                Grid.ColumnSpan="4"
                Margin="0, 50, 0, 0"
-               Source="Biden_Happy"
+               Source="BidenHunger_Sad"
                VerticalOptions="StartAndExpand"
                HorizontalOptions="CenterAndExpand" />
         <Image Grid.Row="3"

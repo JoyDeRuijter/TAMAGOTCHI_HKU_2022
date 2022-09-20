@@ -27,8 +27,14 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+            
             <Style TargetType="Label">
-                <Setter Property="FontFamily" Value="DIEDIEDI.TTF#DIEDIEDIE"/>
+                    <Setter Property="FontSize" Value="Medium"/>
+                    <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="DieFont" TargetType="Label">
+                <Setter Property="FontFamily" Value="DIEDIEDI.TTF#DieFont"/>
             </Style>
         </ResourceDictionary>        
     </Application.Resources>

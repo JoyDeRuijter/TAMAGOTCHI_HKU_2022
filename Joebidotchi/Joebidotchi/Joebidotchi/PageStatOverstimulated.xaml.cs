@@ -16,5 +16,23 @@ namespace Joebidotchi
         {
             InitializeComponent();
         }
+
+        private void OnLeftArrowClicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
+
+        private void OnRightArrowClicked(object sender, EventArgs e)
+        {
+            Page sleepPage = new PageStatTired();
+            NavigationPage.SetHasBackButton(sleepPage, false);
+            Navigation.PushAsync(sleepPage);
+        }
+
+        private void OnLeaveClicked(object sender, EventArgs e)
+        {
+            Console.WriteLine("You left Joe to have alone time!");
+            // add points to overstimulated stat
+        }
     }
 }

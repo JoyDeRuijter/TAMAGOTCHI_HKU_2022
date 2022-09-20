@@ -16,5 +16,16 @@ namespace Joebidotchi
         {
             InitializeComponent();
         }
+
+        private void OnLeftArrowClicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
+
+        private void OnSleepClicked(object sender, EventArgs e)
+        {
+            Console.WriteLine("You made Joe sleep!");
+            // add points to tired stat
+        }
     }
 }

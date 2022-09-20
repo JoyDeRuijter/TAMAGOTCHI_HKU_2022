@@ -233,4 +233,43 @@
   <ItemGroup>
     <BundleResource Include="Resources\Table_Press.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ButtonEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ButtonDrink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ButtonLeave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ButtonPlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ButtonSleep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ButtonTalk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BidenHunger_Sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BidenHunger_Angry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BidenHunger_Bored.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BidenHunger_Dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BidenHunger_Happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BidenHunger_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Background_Restaurant.png" />
+  </ItemGroup>
 </Project>

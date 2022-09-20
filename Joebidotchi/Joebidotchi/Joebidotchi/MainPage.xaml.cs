@@ -17,11 +17,6 @@ namespace Joebidotchi
             InitializeComponent();
         }
 
-        private void OnLeftArrowClicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new PageStatTired());
-        }
-
         private void OnRightArrowClicked(object sender, EventArgs e)
         {
             Page eatPage = new PageStatEat();
