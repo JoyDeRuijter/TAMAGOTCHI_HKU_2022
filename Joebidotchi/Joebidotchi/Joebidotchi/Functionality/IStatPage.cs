@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Joebidotchi
+namespace Joebidotchi.Functionality
 {
     internal interface IStatPage
     {

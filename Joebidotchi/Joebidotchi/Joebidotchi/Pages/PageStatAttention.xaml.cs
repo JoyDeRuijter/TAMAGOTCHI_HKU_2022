@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Joebidotchi.Functionality;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Joebidotchi
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PageStatDrink : ContentPage, IStatPage
+    public partial class PageStatAttention : ContentPage, IStatPage
     {
-        public PageStatDrink()
+        public PageStatAttention()
         {
             InitializeComponent();
         }
@@ -24,15 +24,15 @@ namespace Joebidotchi
 
         public void OnRightArrowClicked(object sender, EventArgs e)
         {
-            Page boredPage = new PageStatBored();
-            NavigationPage.SetHasBackButton(boredPage, false);
-            Navigation.PushAsync(boredPage);
+            Page overstimPage = new PageStatOverstimulated();
+            NavigationPage.SetHasBackButton(overstimPage, false);
+            Navigation.PushAsync(overstimPage);
         }
 
         public void OnStatButtonClicked(object sender, EventArgs e)
         {
-            Console.WriteLine("You made Joe drink!");
-            // add points to thirst stat
+            Console.WriteLine("You gave Joe attention!");
+            // add points to attention stat
         }
     }
 }

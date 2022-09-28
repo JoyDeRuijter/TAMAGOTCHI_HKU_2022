@@ -1,4 +1,5 @@
-﻿using Joebidotchi.Services;
+﻿using Joebidotchi.Functionality;
+using Joebidotchi.Services;
 using Joebidotchi.Views;
 using System;
 using Xamarin.Essentials;
@@ -14,7 +15,7 @@ namespace Joebidotchi
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            //DependencyService.Register<MockDataStore>();
             DependencyService.RegisterSingleton<Joe>(new Joe());
             MainPage = new NavigationPage(new MainPage())
             {

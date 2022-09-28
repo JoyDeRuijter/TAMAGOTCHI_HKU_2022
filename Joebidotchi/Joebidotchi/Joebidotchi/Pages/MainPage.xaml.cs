@@ -9,6 +9,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Timer = System.Timers.Timer;
 using Xamarin.Essentials;
+using Joebidotchi.ViewModels;
+using Joebidotchi.Functionality;
+using Joebidotchi.Functionality.Stats;
 
 namespace Joebidotchi
 {
@@ -27,20 +30,8 @@ namespace Joebidotchi
             set { OnPropertyChanged(nameof(NumOfDaysProperty));}
         }
 
-        //private FileImageSource.FileProperty statImageSrc = "Icon_Hunger_Red";
-        //public FileImageSource StatImageSrc 
-        //{
-        //    get { return statImageSrc; }
-        //    set 
-        //    {
-        //        statImageSrc = value;
-        //        OnPropertyChanged(nameof(StatImageSrc));
-        //    }
-        //}
-
         public string StatImageSrc
         {
-
             get { return StatImageSrc; }
             set { OnPropertyChanged(nameof(StatImageSrc));}
         }
@@ -50,6 +41,7 @@ namespace Joebidotchi
             BindingContext = this;
             InitializeComponent();
 
+            StatImageSrc = "Icon_Hunger_Red";
             secTimer = new Timer();
             SetTimer(secTimer, 10000.0);
             SetDate();
@@ -88,14 +80,14 @@ namespace Joebidotchi
         private void Timer_Elapsed(object sender, ElapsedEventArgs args)
         {
             //Console.WriteLine("Timer elapsed!");
-            Console.WriteLine(joe.stats["Hunger"].statValue);
+            Console.WriteLine(joe.stats["Hunger"].Value);
 
             Device.BeginInvokeOnMainThread(() =>
             {
                 // Everything here will be executed on the main thread
                 NumOfDaysProperty = (int.Parse(NumOfDaysProperty) + 1).ToString();
 
-                foreach (Stat stat in joe.stats.Values)
+                foreach (AStat stat in joe.stats.Values)
                 {
                     stat.Decrease(0.01f);
                 }
