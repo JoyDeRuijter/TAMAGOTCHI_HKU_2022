@@ -31,12 +31,14 @@
             <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
 
+
         <Image Grid.Row="0"
                Grid.RowSpan="5"
                Grid.ColumnSpan="8" 
                Source="Background_Restaurant"
                HorizontalOptions="FillAndExpand"
                Aspect="AspectFill"/>
+        
         <Image Grid.Row="1"
                Grid.Column="1"
                Grid.ColumnSpan="2"
@@ -53,7 +55,7 @@
                HorizontalOptions="CenterAndExpand"
                BackgroundColor="Transparent"
                BorderColor="Transparent"
-               Clicked="OnEatClicked">
+               Clicked="OnStatButtonClicked">
             
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="CommonStates">
@@ -154,6 +156,8 @@
             </VisualStateManager.VisualStateGroups>
 
         </ImageButton>
+
+        <Label Text="{Binding OtherProperty}" TextColor="Magenta" FontSize="Large" />
 
     </Grid>
 

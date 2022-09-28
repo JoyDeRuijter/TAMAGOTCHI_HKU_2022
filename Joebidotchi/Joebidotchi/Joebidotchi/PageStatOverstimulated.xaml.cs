@@ -10,26 +10,26 @@ using Xamarin.Forms.Xaml;
 namespace Joebidotchi
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PageStatOverstimulated : ContentPage
+    public partial class PageStatOverstimulated : ContentPage, IStatPage
     {
         public PageStatOverstimulated()
         {
             InitializeComponent();
         }
 
-        private void OnLeftArrowClicked(object sender, EventArgs e)
+        public void OnLeftArrowClicked(object sender, EventArgs e)
         {
             Navigation.PopAsync();
         }
 
-        private void OnRightArrowClicked(object sender, EventArgs e)
+        public void OnRightArrowClicked(object sender, EventArgs e)
         {
             Page sleepPage = new PageStatTired();
             NavigationPage.SetHasBackButton(sleepPage, false);
             Navigation.PushAsync(sleepPage);
         }
 
-        private void OnLeaveClicked(object sender, EventArgs e)
+        public void OnStatButtonClicked(object sender, EventArgs e)
         {
             Console.WriteLine("You left Joe to have alone time!");
             // add points to overstimulated stat

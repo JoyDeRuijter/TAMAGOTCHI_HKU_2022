@@ -53,7 +53,7 @@
                HorizontalOptions="CenterAndExpand"
                BackgroundColor="Transparent"
                BorderColor="Transparent"
-               Clicked="OnDrinkClicked">
+               Clicked="OnStatButtonClicked">
 
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="CommonStates">

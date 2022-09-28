@@ -10,19 +10,21 @@ using Xamarin.Forms.Xaml;
 namespace Joebidotchi
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PageStatTired : ContentPage
+    public partial class PageStatTired : ContentPage, IStatPage
     {
         public PageStatTired()
         {
             InitializeComponent();
         }
 
-        private void OnLeftArrowClicked(object sender, EventArgs e)
+        public void OnRightArrowClicked(object sender, EventArgs e){}
+
+        public void OnLeftArrowClicked(object sender, EventArgs e)
         {
             Navigation.PopAsync();
         }
 
-        private void OnSleepClicked(object sender, EventArgs e)
+        public void OnStatButtonClicked(object sender, EventArgs e)
         {
             Console.WriteLine("You made Joe sleep!");
             // add points to tired stat

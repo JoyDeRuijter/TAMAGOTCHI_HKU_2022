@@ -53,7 +53,7 @@
                HorizontalOptions="CenterAndExpand"
                BackgroundColor="Transparent"
                BorderColor="Transparent"
-               Clicked="OnLeaveClicked">
+               Clicked="OnStatButtonClicked">
 
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="CommonStates">
