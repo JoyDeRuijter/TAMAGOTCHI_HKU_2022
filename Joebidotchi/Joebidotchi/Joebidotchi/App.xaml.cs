@@ -15,6 +15,7 @@ namespace Joebidotchi
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
+            DependencyService.RegisterSingleton<Joe>(new Joe());
             MainPage = new NavigationPage(new MainPage())
             {
                 BarBackgroundColor = Color.FromHex("#0d0817"),
