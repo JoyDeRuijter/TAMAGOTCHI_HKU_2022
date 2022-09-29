@@ -1,33 +1,29 @@
 ﻿using Joebidotchi.Logic;
-using Joebidotchi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-
+using System.Timers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Timers;
-using Timer = System.Timers.Timer;
 
 namespace Joebidotchi.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StatPageHunger : ContentPage, IStatPage
+    public partial class StatPageOverstimulated : ContentPage
     {
         private Timer timer;
         private Joe joe = DependencyService.Get<Joe>();
         private Stat stat;
 
-        public StatPageHunger()
+        public StatPageOverstimulated()
         {
             InitializeComponent();
 
             timer = new Timer();
             SetTimer(timer, 1000);
-            stat = joe.stats[0];
+            stat = joe.stats[4];
         }
 
         private void SetTimer(Timer _timer, double _interval)
@@ -43,7 +39,7 @@ namespace Joebidotchi.Pages
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                Icon_Hunger.Source = joe.stats[0].currentIconSrc;
+                Icon_Overstimulated.Source = joe.stats[4].currentIconSrc;
                 UpdateBiden();
                 //HardcodedIconUpdate();
                 //UpdateBiden();
@@ -65,9 +61,9 @@ namespace Joebidotchi.Pages
 
         public void OnRightArrowClicked(object sender, EventArgs e)
         {
-            Page statPageThirst = new StatPageThirst();
-            NavigationPage.SetHasBackButton(statPageThirst, false);
-            Navigation.PushAsync(statPageThirst);
+            Page statPageTired = new StatPageTired();
+            NavigationPage.SetHasBackButton(statPageTired, false);
+            Navigation.PushAsync(statPageTired);
         }
 
         public void OnStatButtonClicked(object sender, EventArgs e)

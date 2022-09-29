@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Joebidotchi.Pages.StatPageHunger">
-
+             x:Class="Joebidotchi.Pages.StatPageThirst">
+    
     <!--ControlTemplate="{StaticResource TestTemplate}"-->
 
     <NavigationPage.TitleView>
@@ -40,13 +40,13 @@
         <!--Stat icon image-->
         <Image Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="2"
                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
-               x:Name="Icon_Hunger" Source="Icon_Hunger_Green"/>
+               x:Name="Icon_Thirst" Source="Icon_Thirst_Green"/>
 
         <!--Stat button-->
         <ImageButton Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="3" Margin="0"
                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                BackgroundColor="Transparent" BorderColor="Transparent"
-               Clicked="OnStatButtonClicked" Source="Button_Hunger">
+               Clicked="OnStatButtonClicked" Source="Button_Thirst">
 
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="CommonStates">

@@ -13,6 +13,7 @@ namespace Joebidotchi
 
             DependencyService.RegisterSingleton<MainViewModel>(new MainViewModel());
             DependencyService.RegisterSingleton<Joe>(new Joe());
+
             joe = DependencyService.Get<Joe>();
             MainPage = new NavigationPage(new MainPage())
             {

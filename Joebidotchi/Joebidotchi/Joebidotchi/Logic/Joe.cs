@@ -7,6 +7,7 @@ namespace Joebidotchi.Logic
 {
     public class Joe
     {
+        public bool isDead;
         public int numOfDays;
         public string currentMood = "Biden_Neutral";
 
@@ -22,12 +23,12 @@ namespace Joebidotchi.Logic
 
         public Stat[] stats =
         {
-            new Stat("Hunger", 0.01f, 0),
-            new Stat("Thirst", 0.02f, 1),
-            new Stat("Boredom", 0.005f, 2),
-            new Stat("Loneliness", 0.03f, 3),
-            new Stat("Overstimulated", 0.05f, 4),
-            new Stat("Tired", 0.01f, 5)
+            new Stat("Hunger", 0.001f, 0),
+            new Stat("Thirst", 0.002f, 1),
+            new Stat("Boredom", 0.0009f, 2),
+            new Stat("Loneliness", 0.003f, 3),
+            new Stat("Overstimulated", 0.0009f, 4),
+            new Stat("Tired", 0.004f, 5)
         };
 
         public void CalculateCurrentMood()
@@ -36,8 +37,11 @@ namespace Joebidotchi.Logic
             foreach (Stat stat in stats)
                 totalStat += stat.Value;
 
-            if (totalStat == 6f) // If all stats are completely drained -> Biden is dead
+            if (totalStat == 6f)// If all stats are completely drained -> Biden is dead
+            { 
                 currentMood = moods[5].imgSrc;
+                isDead = true;
+            }
             else if (totalStat >= 3.5f && totalStat < 6f)
             {
                 if (stats[4].Value == 1f) // If the overstimulated stat is completely drained -> Biden is angry
@@ -68,6 +72,22 @@ namespace Joebidotchi.Logic
         {
             Preferences.Set("NumOfDays", numOfDays);
             Preferences.Set("CurrentMood", currentMood);
+        }
+
+        public void OnReset()
+        {
+            numOfDays = 1;
+            currentMood = "Biden_Happy";
+
+            foreach (Stat stat in stats)
+            {
+                stat.Value = 0f;
+            }
+
+            foreach (Stat stat in stats)
+                stat.SaveData();
+
+            SaveData();
         }
     }
 }

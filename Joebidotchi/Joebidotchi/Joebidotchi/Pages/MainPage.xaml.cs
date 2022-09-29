@@ -53,7 +53,7 @@ namespace Joebidotchi
             _timer.Start();
         }
 
-        private void OnTimerElapsed(object sender, ElapsedEventArgs args)
+        public void OnTimerElapsed(object sender, ElapsedEventArgs args)
         {
             //Console.WriteLine("Timer elapsed!");
             Console.WriteLine($"Hunger: " + joe.stats[0].Value);
@@ -101,33 +101,19 @@ namespace Joebidotchi
             Icon_Tired.Source = joe.stats[5].currentIconSrc;
         }
 
-        private void UpdateBiden()
+        public void UpdateBiden()
         {
             joe.CalculateCurrentMood();
             Image_Biden.Source = joe.currentMood;
         }
 
-        public void OnReset()
-        {
-            joe.numOfDays = 1;
-            joe.currentMood = "Biden_Happy";
-
-            foreach (Stat stat in joe.stats)
-            {
-                stat.Value = 0f;
-            }
-
-            foreach (Stat stat in joe.stats)
-                stat.SaveData();
-
-            joe.SaveData();
-        }
+        
 
         private string NumberOfDaysDisplay() => $"Day: {joe.numOfDays}";
 
         private void OnResetButtonClicked(object sender, EventArgs e)
         {
-            OnReset();
+            joe.OnReset();
         }
     }
 }
