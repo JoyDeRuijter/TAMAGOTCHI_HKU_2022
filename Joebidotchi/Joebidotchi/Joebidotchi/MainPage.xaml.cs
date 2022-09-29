@@ -14,5 +14,10 @@ namespace Joebidotchi
         {
             InitializeComponent();
         }
+
+        private void OnRightArrowClicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

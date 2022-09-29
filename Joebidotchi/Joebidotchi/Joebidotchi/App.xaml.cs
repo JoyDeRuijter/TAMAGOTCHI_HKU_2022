@@ -10,7 +10,11 @@ namespace Joebidotchi
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("0d0817"),
+                BarTextColor = Color.White,
+            };
         }
 
         protected override void OnStart()
