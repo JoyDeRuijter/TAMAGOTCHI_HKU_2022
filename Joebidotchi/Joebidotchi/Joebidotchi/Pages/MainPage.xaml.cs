@@ -19,29 +19,12 @@ namespace Joebidotchi
         private Timer timer;
         private DateTime date;
         private Joe joe = DependencyService.Get<Joe>();
-        private ImageSource[] iconImageSources = new ImageSource[6];
 
         public MainPage()
         {
             InitializeComponent();
-
             timer = new Timer();
             SetTimer(timer, 1000);
-
-            AddIconImageSources();
-
-            //foreach (Stat stat in joe.stats)
-            //    stat.AddStatObserver(UpdateIconSrc);
-        }
-
-        private void AddIconImageSources()
-        {
-            iconImageSources[0] = Icon_Hunger.Source;
-            iconImageSources[1] = Icon_Thirst.Source;
-            iconImageSources[2] = Icon_Boredom.Source;
-            iconImageSources[3] = Icon_Loneliness.Source;
-            iconImageSources[4] = Icon_Overstimulated.Source;
-            iconImageSources[5] = Icon_Tired.Source;
         }
 
         private void SetTimer(Timer _timer, double _interval)
@@ -55,12 +38,6 @@ namespace Joebidotchi
 
         public void OnTimerElapsed(object sender, ElapsedEventArgs args)
         {
-            //Console.WriteLine("Timer elapsed!");
-            Console.WriteLine($"Hunger: " + joe.stats[0].Value);
-            //Console.WriteLine($"Thirst: " + joe.stats[1].Value);
-            //Console.WriteLine($"Boredom: " + joe.stats[2].Value);
-            Console.WriteLine(joe.stats[0].currentIconSrc);
-
             Device.BeginInvokeOnMainThread(() =>
             {
                 foreach (Stat stat in joe.stats)
@@ -96,12 +73,6 @@ namespace Joebidotchi
             Navigation.PushAsync(statPageHunger);
         }
 
-        private void IncreaseNumberOfDays(int _value)
-        {
-            joe.numOfDays += _value;
-            NumOfDays.Text = NumberOfDaysDisplay();
-        }
-
         private void UpdateDialogue()
         {
             TextBubbleText.Text = joe.currentDialogue;
@@ -122,8 +93,6 @@ namespace Joebidotchi
             joe.CalculateCurrentMood();
             Image_Biden.Source = joe.currentMood;
         }
-
-        
 
         private string NumberOfDaysDisplay() => $"Day: {joe.numOfDays}";
 

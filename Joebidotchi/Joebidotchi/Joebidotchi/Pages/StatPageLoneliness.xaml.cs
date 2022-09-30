@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace Joebidotchi.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StatPageLoneliness : ContentPage
+    public partial class StatPageLoneliness : ContentPage, IStatPage
     {
         private Timer timer;
         private Joe joe = DependencyService.Get<Joe>();
@@ -41,10 +41,6 @@ namespace Joebidotchi.Pages
             {
                 Icon_Loneliness.Source = joe.stats[3].currentIconSrc;
                 UpdateBiden();
-                //HardcodedIconUpdate();
-                //UpdateBiden();
-                //IncreaseNumberOfDays(1);
-                //viewModel.OnPropertyChanged(nameof(viewModel.DisplayNumOfDays));
             });
         }
 
@@ -69,6 +65,13 @@ namespace Joebidotchi.Pages
         public void OnStatButtonClicked(object sender, EventArgs e)
         {
             stat.Decrease(0.1f);
+            BounceBiden();
+        }
+
+        private async void BounceBiden()
+        {
+            await Image_Biden.ScaleTo(1.15f, 250, Easing.Linear);
+            await Image_Biden.ScaleTo(1f, 250, Easing.Linear);
         }
     }
 }

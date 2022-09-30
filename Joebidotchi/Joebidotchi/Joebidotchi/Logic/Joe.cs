@@ -9,11 +9,12 @@ namespace Joebidotchi.Logic
 {
     public class Joe
     {
-        private Timer timer;
+        public string currentDialogue = "America's a Nation, that can be defined in a single word:";
+        public string currentMood = "Biden_Neutral";
         public bool isDead;
         public int numOfDays;
-        public string currentMood = "Biden_Neutral";
-        public string currentDialogue = "America's a Nation, that can be defined in a single word:";
+
+        private Timer timer;
         private int dialogueIndex = 0;
 
         public Joe()
@@ -34,11 +35,11 @@ namespace Joebidotchi.Logic
 
         public Stat[] stats =
         {
-            new Stat("Hunger", 0.001f, 0),
-            new Stat("Thirst", 0.002f, 1),
-            new Stat("Boredom", 0.0009f, 2),
+            new Stat("Hunger", 0.005f, 0),
+            new Stat("Thirst", 0.007f, 1),
+            new Stat("Boredom", 0.009f, 2),
             new Stat("Loneliness", 0.003f, 3),
-            new Stat("Overstimulated", 0.0009f, 4),
+            new Stat("Overstimulated", 0.009f, 4),
             new Stat("Tired", 0.004f, 5)
         };
 
@@ -98,18 +99,18 @@ namespace Joebidotchi.Logic
                 else
                     currentMood = moods[4].imgSrc; // In all other cases -> Biden is sad
             }
-            else if (totalStat >= 1.5f && totalStat < 3.5f)
+            else if (totalStat >= 1.5f && totalStat < 3.5f) // Neutral Biden
                 currentMood = moods[1].imgSrc;
             else
-                currentMood = moods[0].imgSrc;
+                currentMood = moods[0].imgSrc; // Happy Biden
         }
 
         public void SetCurrentDialogue()
         {
             if (!isDead)
-                currentDialogue = dialogueLines[dialogueIndex].Dialogue;
+                currentDialogue = dialogueLines[dialogueIndex].dialogue;
             else
-                currentDialogue = dialogueLines[dialogueLines.Length - 1].Dialogue;
+                currentDialogue = dialogueLines[dialogueLines.Length - 1].dialogue;
         }
 
         public void GetData()
