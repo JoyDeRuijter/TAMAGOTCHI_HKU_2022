@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Joebidotchi.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--<ControlTemplate x:Key="TestTemplate">
+                <StackLayout>
+                    <Label Text="Header"
+                            BackgroundColor="CadetBlue"
+                            TextColor="White"
+                            VerticalOptions="Start"/>
+                    <ContentPresenter VerticalOptions="FillAndExpand"/>
+                    <Label Text="Footer"
+                            BackgroundColor="LightYellow"
+                            TextColor="White"
+                            VerticalOptions="End"/>
+                </StackLayout>
+            </ControlTemplate>-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

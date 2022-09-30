@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Joebidotchi.Pages.StatPageThirst">
+    
+    <!--ControlTemplate="{StaticResource TestTemplate}"-->
+
+    <NavigationPage.TitleView>
+        <Image Source="Logo.png"
+               HeightRequest="50"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand" />
+    </NavigationPage.TitleView>
+
+    <Grid>
+        <!--Grid definitions-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100"/>
+            <RowDefinition />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="25"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Background image-->
+        <Image Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="8"
+               HorizontalOptions="FillAndExpand" Aspect="AspectFill"
+               Source="Background"/>
+
+        <!--Stat icon image-->
+        <Image Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="2"
+               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+               x:Name="Icon_Thirst" Source="Icon_Thirst_Green"/>
+
+        <!--Stat button-->
+        <ImageButton Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="3" Margin="0"
+               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+               BackgroundColor="Transparent" BorderColor="Transparent"
+               Clicked="OnStatButtonClicked" Source="Button_Thirst">
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="0.8" />
+                            <Setter Property="BackgroundColor"
+                                    Value="White"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+        </ImageButton>
+
+        <!--Biden image-->
+        <Image Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,50,0,0"
+               VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"
+               x:Name="Image_Biden" Source="Biden_Happy"/>
+
+        <!--Table image-->
+        <Image Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="6" Margin="15,0,15,0"
+               VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"
+               Source="Table"/>
+
+        <!--Arrow image buttons-->
+        <ImageButton Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="2" Margin="10,0,0,25"
+                     VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"
+                     BackgroundColor="Transparent" BorderColor="Transparent"
+                     Source="Arrow_Right" Clicked="OnRightArrowClicked">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="0.6" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </ImageButton>
+
+        <ImageButton Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0,15,25"
+                     VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"
+                     BackgroundColor="Transparent" BorderColor="Transparent"
+                     Source="Arrow_Left" Clicked="OnLeftArrowClicked">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="0.6" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </ImageButton>
+
+    </Grid>
+
+
+</ContentPage>
