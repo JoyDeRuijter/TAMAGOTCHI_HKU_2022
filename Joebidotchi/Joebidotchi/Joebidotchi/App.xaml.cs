@@ -1,5 +1,4 @@
-﻿using Joebidotchi.Models;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Joebidotchi.Logic;
 
 [assembly: ExportFont("DIEDIEDI.TTF", Alias = "MainFont")]
@@ -13,10 +12,10 @@ namespace Joebidotchi
         {
             InitializeComponent();
 
-            DependencyService.RegisterSingleton<MainViewModel>(new MainViewModel());
             DependencyService.RegisterSingleton<Joe>(new Joe());
 
             joe = DependencyService.Get<Joe>();
+
             MainPage = new NavigationPage(new MainPage())
             {
                 BarBackgroundColor = Color.FromHex("0d0817"),

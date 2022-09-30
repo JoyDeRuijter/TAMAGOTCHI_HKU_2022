@@ -241,4 +241,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\Logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Button_Reset.png" />
+  </ItemGroup>
 </Project>

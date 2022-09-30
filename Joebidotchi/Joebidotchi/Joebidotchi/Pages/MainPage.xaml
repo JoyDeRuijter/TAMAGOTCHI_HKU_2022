@@ -5,10 +5,6 @@
              xmlns:models="clr-namespace:Joebidotchi.Models"
              x:Class="Joebidotchi.MainPage">
 
-    <ContentPage.BindingContext>
-        <models:MainViewModel/>
-    </ContentPage.BindingContext>
-    
     <!--ControlTemplate="{StaticResource TestTemplate}"-->
     
     <NavigationPage.TitleView>
@@ -67,6 +63,11 @@
                VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"
                Source="TextBubble"/>
         
+        <!--Text bubble text label-->
+        <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,14,0,0"
+               VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"
+               x:Name="TextBubbleText" Text="TEST"  FontSize="Medium"/>
+        
         <!--Biden image-->
         <Image Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4" Margin="0"
                VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"
@@ -108,11 +109,31 @@
             
         </ImageButton>
         
-        <!--Temporary reset button-->
-        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,10,0,0"
+        <!--Reset button-->
+        <ImageButton Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="15,10,15,0"
                      VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"
-                     BackgroundColor="White" BorderColor="Black"
-                     Text="RESET" FontSize="Small" Clicked="OnResetButtonClicked"/>
+                     BackgroundColor="Transparent" BorderColor="White"
+                     Source="Button_Reset" Clicked="OnResetButtonClicked">
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="0.6" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+        </ImageButton>
 
     </Grid>
 

@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Timers;
 using Timer = System.Timers.Timer;
-using Joebidotchi.Models;
 using Joebidotchi.Logic;
 using Joebidotchi.Pages;
+using Xamarin.Essentials;
 
 namespace Joebidotchi
 {
     public partial class MainPage : ContentPage
     {
         private Timer timer;
-        private MainViewModel viewModel = DependencyService.Get<MainViewModel>();
+        private DateTime date;
         private Joe joe = DependencyService.Get<Joe>();
         private ImageSource[] iconImageSources = new ImageSource[6];
 
@@ -68,9 +68,25 @@ namespace Joebidotchi
 
                 HardcodedIconUpdate();
                 UpdateBiden();
-                IncreaseNumberOfDays(1);
-                viewModel.OnPropertyChanged(nameof(viewModel.DisplayNumOfDays));
+                UpdateDialogue();
+                SetDate();
             });
+        }
+
+        private void SetDate()
+        {
+            int lastNumOfDays = Preferences.Get("NumOfDays", 1);
+            DateTime lastDate = Preferences.Get("Date", DateTime.Today);
+            date = DateTime.Today;
+            if (lastDate != date)
+            {
+                int dayDifference = (date - lastDate).Days;
+                joe.numOfDays = lastNumOfDays + dayDifference;
+            }
+            Preferences.Set("NumOfDays", joe.numOfDays);
+            Preferences.Set("Date", date);
+
+            NumOfDays.Text = NumberOfDaysDisplay();
         }
 
         private void OnRightArrowClicked(object sender, EventArgs e)
@@ -86,10 +102,10 @@ namespace Joebidotchi
             NumOfDays.Text = NumberOfDaysDisplay();
         }
 
-        //private void UpdateIconSrc(Stat _stat)
-        //{
-        //    iconImageSources[_stat.index] = _stat.currentIconSrc;
-        //}
+        private void UpdateDialogue()
+        {
+            TextBubbleText.Text = joe.currentDialogue;
+        }
 
         private void HardcodedIconUpdate()
         {
