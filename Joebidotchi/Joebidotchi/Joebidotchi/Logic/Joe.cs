@@ -35,12 +35,12 @@ namespace Joebidotchi.Logic
 
         public Stat[] stats =
         {
-            new Stat("Hunger", 0.005f, 0),
-            new Stat("Thirst", 0.007f, 1),
-            new Stat("Boredom", 0.009f, 2),
-            new Stat("Loneliness", 0.003f, 3),
-            new Stat("Overstimulated", 0.009f, 4),
-            new Stat("Tired", 0.004f, 5)
+            new Stat("Hunger", 0.0005f, 0),
+            new Stat("Thirst", 0.0007f, 1),
+            new Stat("Boredom", 0.0009f, 2),
+            new Stat("Loneliness", 0.0003f, 3),
+            new Stat("Overstimulated", 0.0009f, 4),
+            new Stat("Tired", 0.0004f, 5)
         };
 
         private DialogueLine[] dialogueLines =
