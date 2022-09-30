@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using Joebidotchi.Logic;
 
+[assembly: ExportFont("DIEDIEDI.TTF", Alias = "MainFont")]
+
 namespace Joebidotchi
 {
     public partial class App : Application
